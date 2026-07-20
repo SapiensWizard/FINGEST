@@ -1,0 +1,8 @@
+1. Melhorar a página de Ajuda e Configurações. Deixar ele bonito e intuitivo
+2. Usar Biblioteca de icones
+3. Modo dark com textos legiveis
+4. Paginação: Não liste 1000 registros de uma vez; aprenda a usar LIMIT e OFFSET em Últimas Transações.
+5. Caixa de pesquisa
+6. Usar a logo da FinCntl
+7. Nome do desenvolvedor da app FinCntl
+8. Cursor pointer nos botões

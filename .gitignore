@@ -1,0 +1,75 @@
+# Byte-compiled / optimized / DLL files (gerados automaticamente pelo Python)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment (pastas do ambiente virtual)
+venv/
+env/
+ENV/
+.venv
+.virtualenv
+
+# Distribution / packaging (se algum dia fizer build)
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# SQLite databases - MUITO IMPORTANTE!
+# Evita enviar a base de dados com dados financeiros reais para o GitHub
+*.db
+*.sqlite
+*.sqlite3
+
+# Ficheiros de log
+*.log
+
+# VS Code (configurações pessoais do editor)
+.vscode/
+*.code-workspace
+
+# PyCharm / Outras IDEs
+.idea/
+*.iml
+
+# Ficheiros do sistema operativo
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ficheiros temporários e de backup
+*.bak
+*~
+*.swp
+*.swo
+*.tmp
+
+# Ficheiros de cobertura de testes (se usar pytest/unittest)
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Ficheiros do Kivy (cache de glsl, logos, etc.)
+kivy-logo-*.png
+*.glsl

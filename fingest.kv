@@ -1,0 +1,213 @@
+#:kivy 2.0
+#:import dp kivy.metrics.dp
+
+<DashboardScreen>:
+    name: 'dashboard'
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(16)
+        spacing: dp(16)
+        
+        MDTopAppBar:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            title: "Fingest - Gestão Financeira"
+            elevation: 2
+            right_action_items: [["cog", lambda x: app.go_to_config()]]
+            md_bg_color: 0.2, 0.6, 0.8, 1
+        
+        MDCard:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: dp(180)
+            padding: dp(16)
+            spacing: dp(8)
+            md_bg_color: 0.95, 0.95, 0.95, 1
+            
+            MDLabel:
+                text: "Saldo Atual"
+                halign: "center"
+                font_style: "H6"
+            
+            MDLabel:
+                id: saldo_label
+                text: "0,00 Kz"
+                halign: "center"
+                font_style: "H3"
+                theme_text_color: "Custom"
+                text_color: 0.2, 0.7, 0.2, 1
+        
+        GridLayout:
+            cols: 2
+            spacing: dp(16)
+            size_hint_y: None
+            height: dp(80)
+            
+            MDRaisedButton:
+                text: "+ Receita"
+                md_bg_color: 0.2, 0.7, 0.3, 1
+                on_release: app.open_add_transacao("receita")
+            
+            MDRaisedButton:
+                text: "- Despesa"
+                md_bg_color: 0.8, 0.3, 0.3, 1
+                on_release: app.open_add_transacao("despesa")
+        
+        MDLabel:
+            text: "Últimas Transações"
+            font_style: "H6"
+            size_hint_y: None
+            height: dp(40)
+        
+        ScrollView:
+            MDList:
+                id: transacoes_list
+                spacing: dp(8)
+        
+        MDRectangleFlatButton:
+            text: "Ver Todas as Transações"
+            on_release: app.go_to_transacoes()
+
+<TransacoesScreen>:
+    name: 'transacoes'
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        
+        MDTopAppBar:
+            title: "Todas as Transações"
+            elevation: 2
+            left_action_items: [["arrow-left", lambda x: app.go_back()]]
+            right_action_items: [["delete", lambda x: app.clear_all_transacoes()]]
+            md_bg_color: 0.2, 0.6, 0.8, 1
+        
+        ScrollView:
+            MDList:
+                id: transacoes_list_full
+                padding: dp(8)
+                spacing: dp(8)
+
+<PoupancasScreen>:
+    name: 'poupancas'
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        
+        MDTopAppBar:
+            title: "Metas de Poupança"
+            elevation: 2
+            left_action_items: [["arrow-left", lambda x: app.go_back()]]
+            right_action_items: [["plus", lambda x: app.open_add_poupanca()]]
+            md_bg_color: 0.2, 0.6, 0.8, 1
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: dp(16)
+            spacing: dp(16)
+            size_hint_y: None
+            height: dp(120)
+            
+            MDCard:
+                orientation: 'vertical'
+                padding: dp(12)
+                md_bg_color: 0.9, 0.95, 1, 1
+                
+                MDLabel:
+                    text: "💰 Quanto pode poupar este mês?"
+                    font_style: "Subtitle1"
+                
+                MDLabel:
+                    id: poupanca_mensal_label
+                    text: "0,00 Kz"
+                    font_style: "H5"
+                    theme_text_color: "Custom"
+                    text_color: 0.2, 0.6, 0.8, 1
+        
+        ScrollView:
+            MDList:
+                id: poupancas_list
+                spacing: dp(8)
+
+<ConfigScreen>:
+    name: 'config'
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        
+        MDTopAppBar:
+            title: "Ajuda e Configurações"
+            elevation: 2
+            left_action_items: [["arrow-left", lambda x: app.go_back()]]
+            md_bg_color: 0.2, 0.6, 0.8, 1
+        
+        ScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(16)
+                spacing: dp(16)
+                size_hint_y: None
+                height: self.minimum_height
+                
+                MDLabel:
+                    text: "📌 Como usar:"
+                    font_style: "H6"
+                
+                MDLabel:
+                    text: "• Botão VERDE = Adicionar Receita"
+                    text: "• Botão VERMELHO = Adicionar Despesa"
+                    text: "• Para EXCLUIR: Deslize o item para a ESQUERDA"
+                    text: "• Botão lixeira = Limpar todas as transações"
+                    text: "• Crie metas de poupança"
+                    text: "• Moeda: Kwanza (Kz) - Angola"
+                
+                MDLabel:
+                    text: "🎯 Funcionalidades:"
+                    font_style: "H6"
+                
+                MDLabel:
+                    text: "✓ Adicionar receitas e despesas"
+                    text: "✓ Remover transações individuais"
+                    text: "✓ Limpar todas as transações"
+                    text: "✓ Metas de poupança"
+                    text: "✓ Cálculo automático de saldo"
+                
+                MDLabel:
+                    text: "🔄 Acessibilidade:"
+                    font_style: "H6"
+                
+                MDSwitch:
+                    id: high_contrast
+                    text: "Modo Alto Contraste"
+                    on_active: app.toggle_high_contrast(self.active)
+                
+                MDLabel:
+                    text: "Desenvolvido para Angola 🇦🇴"
+                    halign: "center"
