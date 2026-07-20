@@ -48,3 +48,27 @@ O nosso objetivo é oferecer uma ferramenta **simples, clara e acessível**, esp
 ---
 
 ## 📂 Estrutura do Projeto
+
+A organização dos ficheiros é simples e modular, facilitando a manutenção e expansão:
+```
+fingest/ # Pasta raiz do projeto
+├── main.py # Ponto de entrada da aplicação (inicia o ciclo Kivy)
+├── database.py # Gerencia a conexão e operações CRUD com SQLite
+├── fingest.kv # Ficheiro principal de layout Kivy (estilos e estrutura visual)
+└── screens/ # Módulo com as diferentes telas da aplicação
+├── init.py # Torna o diretório um pacote Python
+├── dashboard.py # Tela com visão geral do saldo e resumo
+├── transacoes.py # Tela para registo, edição e listagem de despesas/receitas
+├── poupancas.py # Tela para definir e monitorizar metas de poupança
+└── config.py # Tela de configurações (tema, tamanho de fonte, etc.)
+```
+
+# Autor
+
+**Académico:** Onésimo Supe
+
+**Curso:** Gestão de Redes e Sistemas Informáticos
+
+**Instituição:** Instituto Politécnico Privado Lucrécio dos Santos (IPPLS)
+
+**Ano:** 2026
